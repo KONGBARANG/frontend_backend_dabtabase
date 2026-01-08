@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask + SQLite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Frontend → Backend → Database</h1>
+
+        <form method="post" class="form">
+            <input type="text" name="name" placeholder="បញ្ចូលឈ្មោះ" required>
+            <button type="submit">Save</button>
+        </form>
+
+        <h2>Users</h2>
+        <ul class="users">
+            {% for user in users %}
+                <li>{{ user.name }}</li>
+            {% else %}
+                <li class="empty">No users yet</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>
